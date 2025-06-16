@@ -1,0 +1,32 @@
+module AguToken
+  module Models
+    type pet_update_by_id_params =
+      { name: String, status: String }
+      & AguToken::Internal::Type::request_parameters
+
+    class PetUpdateByIDParams < AguToken::Internal::Type::BaseModel
+      extend AguToken::Internal::Type::RequestParameters::Converter
+      include AguToken::Internal::Type::RequestParameters
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      def initialize: (
+        ?name: String,
+        ?status: String,
+        ?request_options: AguToken::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        name: String,
+        status: String,
+        request_options: AguToken::RequestOptions
+      }
+    end
+  end
+end

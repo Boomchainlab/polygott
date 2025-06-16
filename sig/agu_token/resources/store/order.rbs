@@ -1,0 +1,29 @@
+module AguToken
+  module Resources
+    class Store
+      class Order
+        def create: (
+          ?id: Integer,
+          ?complete: bool,
+          ?pet_id: Integer,
+          ?quantity: Integer,
+          ?ship_date: Time,
+          ?status: AguToken::Models::Order::status,
+          ?request_options: AguToken::request_opts
+        ) -> AguToken::Order
+
+        def retrieve: (
+          Integer order_id,
+          ?request_options: AguToken::request_opts
+        ) -> AguToken::Order
+
+        def delete: (
+          Integer order_id,
+          ?request_options: AguToken::request_opts
+        ) -> nil
+
+        def initialize: (client: AguToken::Client) -> void
+      end
+    end
+  end
+end

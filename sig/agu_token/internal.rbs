@@ -1,0 +1,9 @@
+module AguToken
+  module Internal
+    extend AguToken::Internal::Util::SorbetRuntimeSupport
+
+    type file_input = Pathname | StringIO | IO | String | AguToken::FilePart
+
+    OMIT: Object
+  end
+end

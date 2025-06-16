@@ -1,0 +1,13 @@
+module AguToken
+  module Resources
+    class Store
+      attr_reader order: AguToken::Resources::Store::Order
+
+      def list_inventory: (
+        ?request_options: AguToken::request_opts
+      ) -> AguToken::Models::store_list_inventory_response
+
+      def initialize: (client: AguToken::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module AguToken
+  module Models
+    module Store
+      type order_create_params =
+        {  } & AguToken::Internal::Type::request_parameters
+
+      class OrderCreateParams < AguToken::Models::Order
+        extend AguToken::Internal::Type::RequestParameters::Converter
+        include AguToken::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: AguToken::request_opts) -> void
+
+        def to_hash: -> { request_options: AguToken::RequestOptions }
+      end
+    end
+  end
+end

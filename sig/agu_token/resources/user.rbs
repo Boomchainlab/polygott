@@ -1,0 +1,55 @@
+module AguToken
+  module Resources
+    class User
+      def create: (
+        ?id: Integer,
+        ?email: String,
+        ?first_name: String,
+        ?last_name: String,
+        ?password: String,
+        ?phone: String,
+        ?username: String,
+        ?user_status: Integer,
+        ?request_options: AguToken::request_opts
+      ) -> AguToken::UserAPI
+
+      def retrieve: (
+        String username,
+        ?request_options: AguToken::request_opts
+      ) -> AguToken::UserAPI
+
+      def update: (
+        String existing_username,
+        ?id: Integer,
+        ?email: String,
+        ?first_name: String,
+        ?last_name: String,
+        ?password: String,
+        ?phone: String,
+        ?username: String,
+        ?user_status: Integer,
+        ?request_options: AguToken::request_opts
+      ) -> nil
+
+      def delete: (
+        String username,
+        ?request_options: AguToken::request_opts
+      ) -> nil
+
+      def create_with_list: (
+        ?items: ::Array[AguToken::UserAPI],
+        ?request_options: AguToken::request_opts
+      ) -> AguToken::UserAPI
+
+      def login: (
+        ?password: String,
+        ?username: String,
+        ?request_options: AguToken::request_opts
+      ) -> String
+
+      def logout: (?request_options: AguToken::request_opts) -> nil
+
+      def initialize: (client: AguToken::Client) -> void
+    end
+  end
+end

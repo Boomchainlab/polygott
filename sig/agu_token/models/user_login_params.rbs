@@ -1,0 +1,32 @@
+module AguToken
+  module Models
+    type user_login_params =
+      { password: String, username: String }
+      & AguToken::Internal::Type::request_parameters
+
+    class UserLoginParams < AguToken::Internal::Type::BaseModel
+      extend AguToken::Internal::Type::RequestParameters::Converter
+      include AguToken::Internal::Type::RequestParameters
+
+      attr_reader password: String?
+
+      def password=: (String) -> String
+
+      attr_reader username: String?
+
+      def username=: (String) -> String
+
+      def initialize: (
+        ?password: String,
+        ?username: String,
+        ?request_options: AguToken::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        password: String,
+        username: String,
+        request_options: AguToken::RequestOptions
+      }
+    end
+  end
+end
