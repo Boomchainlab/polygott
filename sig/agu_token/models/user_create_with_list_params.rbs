@@ -1,0 +1,26 @@
+module AguToken
+  module Models
+    type user_create_with_list_params =
+      { items: ::Array[AguToken::UserAPI] }
+      & AguToken::Internal::Type::request_parameters
+
+    class UserCreateWithListParams < AguToken::Internal::Type::BaseModel
+      extend AguToken::Internal::Type::RequestParameters::Converter
+      include AguToken::Internal::Type::RequestParameters
+
+      attr_reader items: ::Array[AguToken::UserAPI]?
+
+      def items=: (::Array[AguToken::UserAPI]) -> ::Array[AguToken::UserAPI]
+
+      def initialize: (
+        ?items: ::Array[AguToken::UserAPI],
+        ?request_options: AguToken::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        items: ::Array[AguToken::UserAPI],
+        request_options: AguToken::RequestOptions
+      }
+    end
+  end
+end

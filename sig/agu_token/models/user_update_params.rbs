@@ -1,0 +1,15 @@
+module AguToken
+  module Models
+    type user_update_params =
+      {  } & AguToken::Internal::Type::request_parameters
+
+    class UserUpdateParams < AguToken::Models::UserAPI
+      extend AguToken::Internal::Type::RequestParameters::Converter
+      include AguToken::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: AguToken::request_opts) -> void
+
+      def to_hash: -> { request_options: AguToken::RequestOptions }
+    end
+  end
+end

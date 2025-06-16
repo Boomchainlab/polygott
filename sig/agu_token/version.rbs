@@ -1,0 +1,3 @@
+module AguToken
+  VERSION: String
+end

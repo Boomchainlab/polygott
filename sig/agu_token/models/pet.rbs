@@ -1,0 +1,85 @@
+module AguToken
+  module Models
+    type pet_api =
+      {
+        name: String,
+        photo_urls: ::Array[String],
+        id: Integer,
+        category: AguToken::Category,
+        status: AguToken::Models::PetAPI::status,
+        tags: ::Array[AguToken::PetAPI::Tag]
+      }
+
+    class PetAPI < AguToken::Internal::Type::BaseModel
+      attr_accessor name: String
+
+      attr_accessor photo_urls: ::Array[String]
+
+      attr_reader id: Integer?
+
+      def id=: (Integer) -> Integer
+
+      attr_reader category: AguToken::Category?
+
+      def category=: (AguToken::Category) -> AguToken::Category
+
+      attr_reader status: AguToken::Models::PetAPI::status?
+
+      def status=: (
+        AguToken::Models::PetAPI::status
+      ) -> AguToken::Models::PetAPI::status
+
+      attr_reader tags: ::Array[AguToken::PetAPI::Tag]?
+
+      def tags=: (
+        ::Array[AguToken::PetAPI::Tag]
+      ) -> ::Array[AguToken::PetAPI::Tag]
+
+      def initialize: (
+        name: String,
+        photo_urls: ::Array[String],
+        ?id: Integer,
+        ?category: AguToken::Category,
+        ?status: AguToken::Models::PetAPI::status,
+        ?tags: ::Array[AguToken::PetAPI::Tag]
+      ) -> void
+
+      def to_hash: -> {
+        name: String,
+        photo_urls: ::Array[String],
+        id: Integer,
+        category: AguToken::Category,
+        status: AguToken::Models::PetAPI::status,
+        tags: ::Array[AguToken::PetAPI::Tag]
+      }
+
+      type status = :available | :pending | :sold
+
+      module Status
+        extend AguToken::Internal::Type::Enum
+
+        AVAILABLE: :available
+        PENDING: :pending
+        SOLD: :sold
+
+        def self?.values: -> ::Array[AguToken::Models::PetAPI::status]
+      end
+
+      type tag = { id: Integer, name: String }
+
+      class Tag < AguToken::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (?id: Integer, ?name: String) -> void
+
+        def to_hash: -> { id: Integer, name: String }
+      end
+    end
+  end
+end

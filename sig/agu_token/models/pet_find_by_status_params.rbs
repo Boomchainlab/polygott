@@ -1,0 +1,40 @@
+module AguToken
+  module Models
+    type pet_find_by_status_params =
+      { status: AguToken::Models::PetFindByStatusParams::status }
+      & AguToken::Internal::Type::request_parameters
+
+    class PetFindByStatusParams < AguToken::Internal::Type::BaseModel
+      extend AguToken::Internal::Type::RequestParameters::Converter
+      include AguToken::Internal::Type::RequestParameters
+
+      attr_reader status: AguToken::Models::PetFindByStatusParams::status?
+
+      def status=: (
+        AguToken::Models::PetFindByStatusParams::status
+      ) -> AguToken::Models::PetFindByStatusParams::status
+
+      def initialize: (
+        ?status: AguToken::Models::PetFindByStatusParams::status,
+        ?request_options: AguToken::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        status: AguToken::Models::PetFindByStatusParams::status,
+        request_options: AguToken::RequestOptions
+      }
+
+      type status = :available | :pending | :sold
+
+      module Status
+        extend AguToken::Internal::Type::Enum
+
+        AVAILABLE: :available
+        PENDING: :pending
+        SOLD: :sold
+
+        def self?.values: -> ::Array[AguToken::Models::PetFindByStatusParams::status]
+      end
+    end
+  end
+end

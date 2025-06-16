@@ -1,0 +1,43 @@
+module AguToken
+  class Category = AguToken::Models::Category
+
+  class Order = AguToken::Models::Order
+
+  class PetAPI = AguToken::Models::PetAPI
+
+  class PetCreateParams = AguToken::Models::PetCreateParams
+
+  class PetDeleteParams = AguToken::Models::PetDeleteParams
+
+  class PetFindByStatusParams = AguToken::Models::PetFindByStatusParams
+
+  class PetFindByTagsParams = AguToken::Models::PetFindByTagsParams
+
+  class PetRetrieveParams = AguToken::Models::PetRetrieveParams
+
+  class PetUpdateByIDParams = AguToken::Models::PetUpdateByIDParams
+
+  class PetUpdateParams = AguToken::Models::PetUpdateParams
+
+  class PetUploadImageParams = AguToken::Models::PetUploadImageParams
+
+  module Store = AguToken::Models::Store
+
+  class StoreListInventoryParams = AguToken::Models::StoreListInventoryParams
+
+  class UserAPI = AguToken::Models::UserAPI
+
+  class UserCreateParams = AguToken::Models::UserCreateParams
+
+  class UserCreateWithListParams = AguToken::Models::UserCreateWithListParams
+
+  class UserDeleteParams = AguToken::Models::UserDeleteParams
+
+  class UserLoginParams = AguToken::Models::UserLoginParams
+
+  class UserLogoutParams = AguToken::Models::UserLogoutParams
+
+  class UserRetrieveParams = AguToken::Models::UserRetrieveParams
+
+  class UserUpdateParams = AguToken::Models::UserUpdateParams
+end
