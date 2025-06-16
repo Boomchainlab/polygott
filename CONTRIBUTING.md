@@ -43,13 +43,13 @@ If you’d like to use the repository from source, you can either install from g
 To install via git in your `Gemfile`:
 
 ```ruby
-gem "agu-token", git: "https://www.github.com/stainless-sdks/agu-token-ruby"
+gem "agu-token", git: "https://www.github.com/Boomchainlab/polygott"
 ```
 
 Alternatively, reference local copy of the repo:
 
 ```bash
-$ git clone -- 'https://www.github.com/stainless-sdks/agu-token-ruby' '<path-to-repo>'
+$ git clone -- 'https://www.github.com/Boomchainlab/polygott' '<path-to-repo>'
 ```
 
 ```ruby
